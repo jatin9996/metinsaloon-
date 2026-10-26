@@ -19,7 +19,7 @@ export function GalleryView() {
               type="button"
               aria-pressed={selected}
               onClick={() => setFilter(item)}
-              className={`rounded-full border px-4 py-2 text-sm transition ${
+              className={`min-h-11 rounded-full border px-4 py-2 text-sm transition ${
                 selected
                   ? "border-ink bg-ink text-cream"
                   : "border-line bg-white/60 text-ink hover:border-gold"

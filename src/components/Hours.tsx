@@ -6,7 +6,7 @@ export function Hours({ className = "" }: { className?: string }) {
       {salon.hours.map((row) => (
         <div
           key={row.days}
-          className="flex items-baseline justify-between gap-6 border-b border-current/15 py-3"
+          className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-current/15 py-3"
         >
           <dt>{row.days}</dt>
           <dd className="tabular-nums">{row.time}</dd>

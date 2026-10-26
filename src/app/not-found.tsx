@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { salon } from "@/data/salon";
 
 export default function NotFound() {
   return (
@@ -12,12 +13,17 @@ export default function NotFound() {
         The link may be out of date. The salon, the price guide and booking are all still here.
       </p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <Link href="/" className="btn btn-dark inline-flex">
+        <Link href="/" className="btn btn-dark inline-flex w-full sm:w-auto">
           Back home
         </Link>
-        <Link href="/book" className="btn btn-line inline-flex">
-          Book a visit
-        </Link>
+        <a
+          href={salon.treatwell}
+          className="btn btn-line inline-flex w-full sm:w-auto"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Book an appointment
+        </a>
       </div>
     </Container>
   );

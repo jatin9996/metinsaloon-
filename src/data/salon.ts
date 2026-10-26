@@ -32,7 +32,7 @@ export const nav = [
   { href: "/salon", label: "The salon" },
   { href: "/services", label: "Services" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/book", label: "Book" },
+  { href: "https://www.treatwell.co.uk/place/metin-london/", label: "Appointment" },
 ] as const;
 
 export type Service = {

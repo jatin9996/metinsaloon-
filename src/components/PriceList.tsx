@@ -9,14 +9,14 @@ export function PriceList({ services }: { services: Service[] }) {
           className="grid gap-3 border-b border-line py-5 transition hover:bg-white/50 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8"
         >
           <div>
-            <p className="font-serif text-2xl leading-tight text-ink">
+            <p className="font-serif text-xl leading-tight text-ink sm:text-2xl">
               {service.name}
             </p>
             <p className="mt-1.5 max-w-md text-sm leading-6 text-stone">
               {service.detail}
             </p>
           </div>
-          <div className="flex items-baseline justify-between gap-6 sm:block sm:text-right">
+          <div className="flex items-baseline justify-between gap-4 sm:block sm:text-right">
             <p className="text-[0.7rem] tracking-[0.16em] text-stone uppercase">
               {service.duration}
             </p>

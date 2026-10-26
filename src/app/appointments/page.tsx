@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AppointmentsPage() {
   return (
-    <Container className="py-14 lg:py-20">
+    <Container className="py-10 sm:py-14 lg:py-20">
       <p className="eyebrow">Desk</p>
       <h1 className="display mt-5 max-w-3xl">
         The day’s <span className="italic text-gold-deep">appointments.</span>

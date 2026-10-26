@@ -1,32 +1,42 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
-import { BookingForm } from "@/components/BookingForm";
 import { Container } from "@/components/Container";
 import { Hours } from "@/components/Hours";
 import { salon } from "@/data/salon";
 
 export const metadata: Metadata = {
-  title: "Book a visit",
+  title: "Appointment",
   description:
-    "Request a hair or beauty appointment at The Metin London Beauty, 86 Mitcham Road, Tooting. Call 07309 311 171.",
+    "Book a hair or beauty appointment at The Metin London Beauty on Treatwell. 86 Mitcham Road, Tooting. Call 07309 311 171.",
 };
 
 export default function BookPage() {
   return (
-    <Container className="grid gap-14 py-14 lg:grid-cols-[1.15fr_0.85fr] lg:py-20">
+    <Container className="grid gap-10 py-10 sm:py-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14 lg:py-20">
       <div>
-        <p className="eyebrow">Book</p>
+        <p className="eyebrow">Appointment</p>
         <h1 className="display mt-5">
-          Request <span className="italic text-gold-deep">a time.</span>
+          Book on <span className="italic text-gold-deep">Treatwell.</span>
         </h1>
-        <p className="mt-5 max-w-xl text-lg leading-8 text-stone">
-          Choose a free time and it is saved in the salon diary as requested. The chair
-          is held once the desk confirms it. You can still send the same details on WhatsApp.
+        <p className="mt-5 max-w-xl text-base leading-7 text-stone sm:text-lg sm:leading-8">
+          Appointments for The Metin London Beauty are taken on Treatwell. Choose a
+          service and a time there, and the salon confirms the visit.
         </p>
-        <div className="mt-10">
-          <BookingForm />
-        </div>
+        <a
+          href={salon.treatwell}
+          className="btn btn-dark mt-8 inline-flex w-full sm:w-auto"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Book an appointment
+        </a>
+        <p className="mt-6 max-w-xl text-sm leading-6 text-stone">
+          Prefer to speak to the salon? Call{" "}
+          <a className="text-ink underline underline-offset-4" href={`tel:${salon.phoneTel}`}>
+            {salon.phoneDisplay}
+          </a>
+          .
+        </p>
       </div>
 
       <aside className="h-fit overflow-hidden rounded-[1.5rem] bg-ink text-cream lg:sticky lg:top-28">
@@ -56,7 +66,7 @@ export default function BookPage() {
           <iframe
             title="Map of 86 Mitcham Road, Tooting"
             src={salon.maps.embed}
-            className="h-64 w-full"
+            className="h-56 w-full max-w-full sm:h-64"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
@@ -69,22 +79,13 @@ export default function BookPage() {
         >
           Get directions →
         </a>
-        <p className="mt-6 text-sm leading-6 text-cream/70">
-          Staff confirm and cancel requests from the appointment desk.
-        </p>
-        <Link href="/appointments" className="mt-2 inline-block text-sm underline underline-offset-4">
-          Open the appointment desk
-        </Link>
-        <p className="mt-6 text-sm leading-6 text-cream/70">
-          Already use Treatwell? The salon is listed there as well.
-        </p>
         <a
           href={salon.treatwell}
           target="_blank"
           rel="noreferrer"
-          className="mt-2 inline-block text-sm underline underline-offset-4"
+          className="btn btn-gold mt-6 inline-flex w-full"
         >
-          Open the Treatwell page
+          Open Treatwell
         </a>
         </div>
       </aside>

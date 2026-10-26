@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Photo } from "@/components/Photo";
 import { PriceList } from "@/components/PriceList";
@@ -15,13 +14,13 @@ export default function ServicesPage() {
   return (
     <>
       <header className="border-b border-line">
-        <Container className="grid items-end gap-8 py-12 lg:grid-cols-[1.2fr_0.8fr] lg:py-16">
+        <Container className="grid items-end gap-8 py-10 sm:py-12 lg:grid-cols-[1.2fr_0.8fr] lg:py-16">
           <div>
             <p className="eyebrow">The menu</p>
             <h1 className="display mt-5 max-w-3xl">
               Hair, face <span className="italic text-gold-deep">and nails.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-stone">{salon.priceNote}</p>
+            <p className="mt-5 max-w-xl text-base leading-7 text-stone sm:mt-6 sm:text-lg sm:leading-8">{salon.priceNote}</p>
           </div>
           <Photo
             src="/gallery/10.jpg"
@@ -46,7 +45,7 @@ export default function ServicesPage() {
       </header>
 
       {serviceGroups.map((group) => (
-        <section key={group.id} id={group.id} className="scroll-mt-24 border-b border-line">
+        <section key={group.id} id={group.id} className="scroll-mt-32 border-b border-line">
           <Container className="grid gap-10 py-14 lg:grid-cols-[0.85fr_1.15fr] lg:py-20">
             <div className="lg:sticky lg:top-28 lg:self-start">
               <Photo
@@ -66,9 +65,14 @@ export default function ServicesPage() {
 
       <Container className="flex flex-col items-start justify-between gap-6 py-16 sm:flex-row sm:items-center">
         <p className="max-w-lg font-serif text-3xl">Not sure which appointment you need?</p>
-        <Link href="/book" className="btn btn-dark inline-flex">
-          Ask when you book
-        </Link>
+        <a
+          href={salon.treatwell}
+          className="btn btn-dark inline-flex w-full sm:w-auto"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Book an appointment
+        </a>
       </Container>
     </>
   );

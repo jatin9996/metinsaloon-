@@ -105,7 +105,7 @@ export function AppointmentsDesk() {
             className="w-full rounded-2xl border border-line bg-white/80 px-4 py-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-gold"
           />
         </div>
-        <button type="submit" className="btn btn-dark inline-flex" disabled={loading || code.trim().length < 3}>
+        <button type="submit" className="btn btn-dark inline-flex w-full sm:w-auto" disabled={loading || code.trim().length < 3}>
           {loading ? "Opening…" : "Open the diary"}
         </button>
       </form>

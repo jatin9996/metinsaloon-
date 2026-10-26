@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Photo } from "@/components/Photo";
 import { amenities, salon } from "@/data/salon";
@@ -14,20 +13,20 @@ const facts = [
   { label: "Experience", value: "20+ years" },
   { label: "Known for", value: "Colour, brows, skin" },
   { label: "Skincare", value: "Medik8" },
-  { label: "Where", value: "Tooting, SW17" },
+  { label: "Where", value: "SW17 9NG" },
 ];
 
 export default function SalonPage() {
   return (
     <>
       <header className="border-b border-line">
-        <Container className="grid items-end gap-10 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:py-20">
+        <Container className="grid items-end gap-8 py-10 sm:py-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:py-20">
           <div>
             <p className="eyebrow">Tooting</p>
             <h1 className="display mt-5 max-w-xl">
               A personal salon <span className="italic text-gold-deep">on Mitcham Road.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-stone">
+            <p className="mt-5 max-w-xl text-base leading-7 text-stone sm:mt-6 sm:text-lg sm:leading-8">
               The Metin London Beauty was opened so hair and beauty could live under one
               name. You can come for a cut, stay for colour, or book the facial you have
               been putting off — and be looked after from the consultation to the finish.
@@ -75,9 +74,9 @@ export default function SalonPage() {
       <section className="py-2">
         <Container className="grid grid-cols-2 gap-3 lg:grid-cols-4">
           {facts.map((fact) => (
-            <div key={fact.label} className="panel px-5 py-8">
+            <div key={fact.label} className="panel px-4 py-6 sm:px-5 sm:py-8">
               <p className="eyebrow">{fact.label}</p>
-              <p className="mt-3 font-serif text-2xl sm:text-3xl">{fact.value}</p>
+              <p className="mt-3 font-serif text-xl leading-tight sm:text-3xl">{fact.value}</p>
             </div>
           ))}
         </Container>
@@ -122,9 +121,14 @@ export default function SalonPage() {
       <section className="border-t border-line">
         <Container className="flex flex-col items-start justify-between gap-6 py-16 sm:flex-row sm:items-end">
           <h2 className="max-w-lg text-4xl">Come in, or send a note before you do.</h2>
-          <Link href="/book" className="btn btn-dark inline-flex">
-            Book a visit
-          </Link>
+          <a
+            href={salon.treatwell}
+            className="btn btn-dark inline-flex w-full sm:w-auto"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Book an appointment
+          </a>
         </Container>
       </section>
     </>

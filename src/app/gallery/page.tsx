@@ -11,21 +11,21 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
   return (
-    <Container className="py-14 lg:py-20">
+    <Container className="py-10 sm:py-14 lg:py-20">
       <p className="eyebrow">Gallery</p>
       <h1 className="display mt-5 max-w-4xl">
         Colour, finish, and the <span className="italic text-gold-deep">quiet of the room.</span>
       </h1>
-      <p className="mt-6 max-w-2xl text-lg leading-8 text-stone">
+      <p className="mt-5 max-w-2xl text-base leading-7 text-stone sm:mt-6 sm:text-lg sm:leading-8">
         These are the salon’s own photographs of 86 Mitcham Road: the styling floor,
         the nail station, the treatment rooms, and the shopfront.
       </p>
       <div className="mt-10">
         <GalleryView />
       </div>
-      <section className="mt-16 rounded-[1.4rem] bg-ink p-7 text-cream sm:p-10">
-        <p className="text-xs tracking-[0.22em] text-gold-soft uppercase">Film</p>
-        <h2 className="mt-3 text-4xl sm:text-5xl">
+      <section className="mt-12 rounded-[1.25rem] bg-ink p-5 text-cream sm:mt-16 sm:rounded-[1.4rem] sm:p-10">
+        <p className="text-xs tracking-[0.16em] text-gold-soft uppercase sm:tracking-[0.22em]">Film</p>
+        <h2 className="mt-3 text-3xl sm:text-5xl">
           Short films live on <span className="italic text-gold-soft">Instagram.</span>
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-7 text-cream/75">
@@ -36,7 +36,7 @@ export default function GalleryPage() {
           href={salon.instagram}
           target="_blank"
           rel="noreferrer"
-          className="btn btn-gold mt-6 inline-flex"
+          className="btn btn-gold mt-6 inline-flex w-full sm:w-auto"
         >
           Watch on Instagram
         </a>
